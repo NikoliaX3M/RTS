@@ -4,7 +4,6 @@ public class CameraMovment : MonoBehaviour
 {
     [SerializeField] private float _normalSpeed;
     [SerializeField] private float _fastSpeed;
-    [SerializeField] private Transform _mapZone;
  
     void Update()
     {

@@ -45,7 +45,7 @@ public class Building : MonoBehaviour
         }
     }
 
-    public void SwitchAvalableColor(bool avalable)
+    private void SwitchAvalableColor(bool avalable)
     {
         _goodState.SetActive(avalable);
         _badState.SetActive(!avalable);
@@ -80,6 +80,10 @@ public class Building : MonoBehaviour
 
     private void OnTriggerExit()
     {
-        _inContactAnotherBuilding = false;
+        if (_isBuilt == false)
+        {
+            SwitchAvalableColor(true);
+            _inContactAnotherBuilding = false;
+        }
     }
 }

@@ -15,8 +15,8 @@ public class WalletLogic : MonoBehaviour
     {
         AmountMoney = 100000;
         UpdateMoneyText?.Invoke(AmountMoney);
-        _buildingGrid.CreateBuilding += quantityMoney => ReduceAmountMoney(quantityMoney);
-        _buildingGrid.DestroyBuilding += quantityMoney => AddMoney(quantityMoney);
+        _buildingGrid.CreateBuilding += buildingProfile => ReduceAmountMoney(buildingProfile.Price);
+        _buildingGrid.DestroyBuilding += buildingProfile => AddMoney(buildingProfile.Price);
     }
 
     private void ReduceAmountMoney(int quantityMoney)
